@@ -21,7 +21,7 @@ export function ProjectsSection() {
       image: "/Captura2.PNG?height=200&width=300",
       technologies: ["HTML", "CSS", "Bootstrap"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/JesusGJ2002/Ecoguardian",
     },
     {
       title: "Programa de Calificaciones",

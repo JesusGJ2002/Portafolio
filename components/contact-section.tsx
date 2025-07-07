@@ -66,7 +66,7 @@ export function ContactSection() {
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" asChild>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/JesusGJ2002" target="_blank" rel="noopener noreferrer">
                     <Github className="h-5 w-5" />
                   </a>
                 </Button>
