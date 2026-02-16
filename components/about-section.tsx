@@ -6,11 +6,15 @@ export function AboutSection() {
     { name: "HTML/CSS", icon: Globe, color: "text-orange-500" },
     { name: "JavaScript", icon: Code, color: "text-yellow-500" },
     { name: ".NET Core", icon: Server, color: "text-purple-500" },
+    { name: "C#", icon: Code, color: "text-purple-600" },
+    { name: "Spring Boot", icon: Server, color: "text-green-500" },
+    { name: "Java", icon: Code, color: "text-red-600" },
     { name: "Angular", icon: Zap, color: "text-red-500" },
-    { name: "Spring", icon: Server, color: "text-green-500" },
-    { name: "SQL", icon: Database, color: "text-blue-600" },
+    { name: "SQL Server", icon: Database, color: "text-blue-600" },
     { name: "Git", icon: Code, color: "text-gray-600" },
     { name: "Bootstrap", icon: Globe, color: "text-purple-400" },
+    { name: "IIS", icon: Server, color: "text-blue-500" },
+    { name: "Postman", icon: Zap, color: "text-orange-600" },
   ]
 
   return (
@@ -22,18 +26,17 @@ export function AboutSection() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Soy un desarrollador Full Stack con experiencia en .NET Core y tecnologías web modernas. Graduado como
-                bachiller técnico industrial en electrónica e Ingeniero de Sistemas egresado de la Universidad Simón Bolívar.
-                
+                Soy un desarrollador Full Stack con experiencia en desarrollo de aplicaciones empresariales usando .NET Core, 
+                Spring Boot, SQL Server y tecnologías front-end modernas. Graduado como bachiller técnico industrial en electrónica 
+                e Ingeniero de Sistemas egresado de la Universidad Simón Bolívar (febrero 2025).
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Destaco por mi habilidad para trabajar en equipo y mi disposición para aprender continuamente. Mi
-                destreza en la comunicación y mi vocación de servicio garantizan un ambiente laboral armonioso y una
-                atención de calidad.
+                Destaco por mi habilidad para trabajar en equipo, resolución de problemas y aprendizaje continuo. Mi destreza en la 
+                comunicación y mi vocación de servicio garantizan un ambiente laboral armonioso y una atención de calidad.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Actualmente trabajo como Desarrollador .NET en Global Soft T&S S.A., donde desarrollo aplicaciones full
-                stack utilizando .NET Core 2.2 y tecnologías web modernas.
+                Actualmente trabajo como Desarrollador Full Stack en la Universidad Simón Bolívar, donde diseño e implemento 
+                aplicaciones web orientadas a la gestión académica utilizando tecnologías como Spring Boot, Angular y SQL Server.
               </p>
             </div>
 

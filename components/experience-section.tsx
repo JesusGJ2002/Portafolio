@@ -1,35 +1,56 @@
+"use client"
+
+import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calendar, MapPin, Building } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Calendar, MapPin, Building, ChevronDown, ChevronUp } from "lucide-react"
 
 export function ExperienceSection() {
   const experiences = [
     {
-      title: "Desarrollador .NET",
-      company: "Global Soft T&S S.A.",
-      period: "Abril 2025 - Actual",
-      location: "Colombia",
-      description: "Desarrollo full stack junior en .NET Core 2.2, creando aplicaciones web robustas y escalables.",
+      title: "Desarrollador Full Stack",
+      company: "Universidad Simón Bolívar",
+      period: "Septiembre 2025 - Presente",
+      location: "Barranquilla, Colombia",
+      description: "Diseño e implementación de aplicaciones web orientadas a la gestión académica, utilizando tecnologías como Spring Boot, Angular y SQL Server.",
       responsibilities: [
-        "Desarrollo de aplicaciones web con .NET Core 2.2",
-        "Implementación de APIs RESTful",
-        "Trabajo en equipo siguiendo metodologías ágiles",
-        "Mantenimiento y optimización de código existente",
+        "Desarrollo de plataforma para registro y seguimiento de monitorías voluntarias, asignadas y remitidas",
+        "Implementación de sistema seguro para registro de actividades docentes con generación automatizada de reportes",
+        "Apoyo en el uso y mejora de la aplicación VirtuApp para registro de proyectos virtuales",
+        "Elaboración de informes mensuales de avance y documentación técnica de los sistemas desarrollados",
+        "Soporte en desarrollo y despliegue de aplicaciones web",
       ],
     },
     {
-      title: "Pasante TI",
-      company: "Universidad Simón Bolívar",
-      period: "2024 (6 meses)",
-      location: "Barranquilla, Colombia",
-      description: "Construcción de proyectos full stack, incluyendo página web institucional para la universidad.",
+      title: "Desarrollador .NET",
+      company: "Global Soft T&S S.A.S",
+      period: "Abril 2025 - Octubre 2025",
+      location: "Colombia",
+      description: "Desarrollo y mantenimiento de módulos web empresariales utilizando .NET Framework/Core y SQL Server.",
       responsibilities: [
-        "Desarrollo de página web institucional",
+        "Migración de lógica heredada desde Visual FoxPro hacia arquitecturas modernas basadas en tecnologías web",
+        "Implementación de interfaces responsivas con JavaScript, jQuery y Bootstrap",
+        "Desarrollo de integraciones personalizadas con plataformas de e-commerce como Shopify",
+        "Participación en proyectos multiplataforma utilizando .NET MAUI para aplicaciones móviles y de escritorio",
+      ],
+    },
+    {
+      title: "Pasantía TI (Desarrollador Full Stack)",
+      company: "Universidad Simón Bolívar",
+      period: "Segundo semestre 2024",
+      location: "Barranquilla, Colombia",
+      description: "Construcción de proyectos académicos full stack para plataformas internas empleando el uso de tecnologías como Spring Boot.",
+      responsibilities: [
+        "Desarrollo de aplicaciones web institucionales",
         "Implementación de funcionalidades full stack",
         "Colaboración con equipos multidisciplinarios",
-        "Documentación técnica de proyectos",
+        "Soporte en desarrollo y despliegue de aplicaciones web",
       ],
     },
   ]
+
+  const [showAllExperiences, setShowAllExperiences] = useState(false)
+  const displayedExperiences = showAllExperiences ? experiences : experiences.slice(0, 1)
 
   const education = [
     {
@@ -39,14 +60,8 @@ export function ExperienceSection() {
       description: "Formación integral en desarrollo de software, bases de datos y tecnologías web.",
     },
     {
-      title: "Curso de Caja",
-      institution: "Institución Educativa",
-      period: "2021",
-      description: "Certificación en manejo de sistemas de caja y atención al cliente.",
-    },
-    {
-      title: "Bachiller Técnico Industrial en Electrónica",
-      institution: "Escuela Secundaria María Auxiliadora",
+      title: "Bachiller Técnico en Electrónica",
+      institution: "Institución Educativa María Auxiliadora",
       period: "2018",
       description: "Formación técnica en electrónica con énfasis en sistemas digitales.",
     },
@@ -66,7 +81,7 @@ export function ExperienceSection() {
                 Experiencia Laboral
               </h3>
               <div className="space-y-6">
-                {experiences.map((exp, index) => (
+                {displayedExperiences.map((exp, index) => (
                   <Card key={index} className="border-l-4 border-l-blue-600">
                     <CardHeader>
                       <CardTitle className="text-lg text-gray-900">{exp.title}</CardTitle>
@@ -93,6 +108,29 @@ export function ExperienceSection() {
                   </Card>
                 ))}
               </div>
+
+              {/* Botón Ver más */}
+              {experiences.length > 1 && (
+                <div className="mt-6 flex justify-center">
+                  <Button
+                    variant="outline"
+                    onClick={() => setShowAllExperiences(!showAllExperiences)}
+                    className="w-full md:w-auto"
+                  >
+                    {showAllExperiences ? (
+                      <>
+                        <ChevronUp className="mr-2 h-4 w-4" />
+                        Ver menos
+                      </>
+                    ) : (
+                      <>
+                        <ChevronDown className="mr-2 h-4 w-4" />
+                        Ver más experiencias ({experiences.length - 1})
+                      </>
+                    )}
+                  </Button>
+                </div>
+              )}
             </div>
 
             {/* Educación */}
@@ -128,9 +166,19 @@ export function ExperienceSection() {
                 <CardTitle className="text-xl text-gray-900">Idiomas</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Inglés</span>
-                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">A2</span>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">🇪🇸 Español</span>
+                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Nativo</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">🇺🇸 Inglés</span>
+                    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">B1 (en proceso)</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">🇩🇪 Alemán</span>
+                    <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">En aprendizaje</span>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -141,7 +189,7 @@ export function ExperienceSection() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {["Postman", "Git", "Bootstrap", "Visual Studio", "VS Code"].map((tool, index) => (
+                  {["Postman", "Git", "Bootstrap", "Visual Studio", "VS Code", "IIS", ".NET MAUI"].map((tool, index) => (
                     <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
                       {tool}
                     </span>

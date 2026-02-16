@@ -55,7 +55,7 @@ export function ContactSection() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-blue-600" />
-                  <span className="text-gray-700">Barranquilla - Atlántico</span>
+                  <span className="text-gray-700">Cra 73#79-49, Barranquilla - Atlántico, Colombia</span>
                 </div>
               </div>
 
